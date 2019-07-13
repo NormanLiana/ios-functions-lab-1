@@ -14,9 +14,36 @@ let nyTax = 0.08775
 func totalWithTax() {
 
 }
+
+// My code below
+
+let itemCost = 45.0
+let nyTax = 0.08775
+
+func totalWithTax() {
+let taxOnItemCost = itemCost * nyTax
+let itemCostWithTaxAdded = itemCost + taxOnItemCost
+print(itemCostWithTaxAdded)
+}
+
+totalWithTax()
 ```
 
 Then, modify the function you implemented to have a return type of `Int`, and use an external name that looks more readable. Function calls should look something like "total cost of the item after tax"
+
+```swift
+let itemCost = 45.0
+let nyTax = 0.08775
+
+func totalCostOfTheItemAfterTax() -> Int {
+let taxOnItemCost = itemCost * nyTax
+let itemCostWithTaxAdded = itemCost + taxOnItemCost
+print(itemCostWithTaxAdded)
+return Int(itemCostWithTaxAdded)
+}
+
+totalCostOfTheItemAfterTax()
+```
 
 ## Question 2
 
@@ -32,6 +59,24 @@ if todaysTemperature <= 40 {
 } else {
     print("Weather is moderate.")
 }
+
+// Converted code below
+
+let todaysTemperature = 72
+
+func whatIsItLikeOutsideToday() -> String {
+
+if todaysTemperature <= 40 {
+print("It's cold out.")
+} else if todaysTemperature >= 85 {
+print("It's really warm.")
+} else {
+print("Weather is moderate.")
+}
+return String(todaysTemperature)
+}
+
+whatIsItLikeOutsideToday()
 ```
 
 
@@ -47,6 +92,24 @@ Input: `min2(a:1, b:2)`
 
 Output: `1`
 
+```swift
+let num1 = 189489764
+let num2 = 43802718
+var biggestNumber = Int()
+
+func min2(firstNumber a: Int, secondNumber b: Int) -> Int {
+if a > b {
+biggestNumber = a
+} else {
+biggestNumber = b
+}
+return biggestNumber
+}
+
+min2(firstNumber: num1, secondNumber: num2)
+
+```
+
 
 ## Question 4
 
@@ -60,11 +123,32 @@ Input: `lastDigit(12345)`
 
 Output: `5`
 
+```swift
+var integer = 12345
+
+func lastDigit(_ number: Int) -> Int {
+let endNumber = number % 10
+return endNumber
+}
+
+lastDigit(integer)
+```
 
 ## Question 5
 
 Write a function that takes in any two positive integers and return the sum.
 
+```swift
+let int1 = 87
+let int2 = 987
+
+func sumOfTwoIntegers(firstInt: Int, secondInt: Int) -> Int {
+let totalSumOfIntegers = firstInt + secondInt
+return totalSumOfIntegers
+}
+
+sumOfTwoIntegers(firstInt: int1, secondInt: int2)
+```
 
 ## Question 6
 
@@ -79,6 +163,28 @@ Write a function takes in any number grade and returns a corresponding letter gr
 | 65 - 69 | D |
 | Below 65 | F |
 
+```swift
+let yourNumberGrade = 72
+var theGrade = String()
+
+func yourLetterGradeIs(g: Int) -> String {
+switch g {
+case 90...99:
+theGrade = "A"
+case 80...89:
+theGrade = "B"
+case 70...79:
+theGrade = "C"
+case 65...69:
+theGrade = "D"
+default:
+theGrade = "F"
+}
+return theGrade
+}
+
+print(yourLetterGradeIs(g: yourNumberGrade))
+```
 
 ## Question 7
 
