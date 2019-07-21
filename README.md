@@ -192,6 +192,25 @@ Make a calculator function that takes in three parameters (two numbers and one o
 
 Operator parameter: (+, -, x, /)
 
+```swift
+func calculator(firstNumber num1: Double, operator op: String, secondNumber num2: Double) -> Double {
+switch op {
+case "/":
+return num1 / num2
+case "*":
+return num1 * num2
+case "+":
+return num1 + num2
+case "-":
+return num1 - num2
+default:
+return 000.00
+}
+}
+
+var operation1 = calculator(firstNumber: 5.0, operator: "*", secondNumber: 6.0)
+print(operation1)
+```
 
 ## Question 8
 
@@ -202,8 +221,12 @@ let mealCost = 45
 let tipPercentage = 0.15
 
 //Write your code below
+func totalWithTip(meal: Double, tip: Double) -> Double {
+return (meal * tip) + meal
+}
 
-let myFinalCost = totalWithTip() //Fill in the arguments
+let myFinalCost = totalWithTip(meal: Double(mealCost), tip: tipPercentage)
+print(myFinalCost)
 ```
 
 Write a function that will print out **total cost after tip and tax.**
@@ -213,7 +236,16 @@ let taxPercentage = 0.09
 
 //Write your code below
 
-let myFinalCostWithTipAndTax = totalWithTipAndTax() //Fill in the arguments in function
+let mealCost = 45
+let tipPercentage = 0.15
+let taxPercentage = 0.09
+
+func totalWithTipAndTax(meal: Double, tip: Double, tax: Double) -> Double {
+return meal + meal * tip + meal * tax
+}
+
+let myFinalCostWithTipAndTax = totalWithTipAndTax(meal: Double(mealCost), tip: tipPercentage, tax: taxPercentage)
+print(myFinalCostWithTipAndTax)
 ```
 
 
